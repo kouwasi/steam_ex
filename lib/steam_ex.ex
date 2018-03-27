@@ -1,18 +1,9 @@
 defmodule SteamEx do
   @moduledoc """
-  Documentation for SteamEx.
+  Steam Web API Interface.
   """
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> SteamEx.hello
-      :world
-
-  """
-  def hello do
-    :world
+  defmodule Response do
+    defstruct status_code: nil, body: nil, headers: %{}
   end
 end
