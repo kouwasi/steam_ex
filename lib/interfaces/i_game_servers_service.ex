@@ -8,8 +8,8 @@ defmodule SteamEx.IGameServersService do
   @doc """
   Gets a list of game server accounts with their logon tokens
 
-  ## Required params
-    - key: Steamworks Web API user authentication key.
+  | Name | Type   | Required | Description |
+  | key  | string | ✔       | Steamworks Web API user authentication key.|
 
   See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#GetAccountList](https://partner.steamgames.com/doc/webapi/IGameServersService#GetAccountList)
   """
@@ -20,8 +20,8 @@ defmodule SteamEx.IGameServersService do
   @doc """
   Gets a list of game servers (new master query server) 
 
-  ## Required params
-    - key: Steamworks Web API user authentication key.
+  | Name | Type   | Required | Description |
+  | key  | string | ✔       | Steamworks Web API user authentication key.|
 
   See other: [https://developer.valvesoftware.com/wiki/Talk:Master_Server_Query_Protocol](https://developer.valvesoftware.com/wiki/Talk:Master_Server_Query_Protocol)
   """
@@ -32,10 +32,10 @@ defmodule SteamEx.IGameServersService do
   @doc """
   Creates a persistent game server account
 
-  ## Required params
-    - key: Steamworks Web API user authentication key.
-    - appid: The app to use the account for
-    - memo: The memo to set on the new account
+  | Name | Type   | Required | Description |
+  | key  | string | ✔       | Steamworks Web API user authentication key.|
+  | appid| uint32 | ✔       | The app to use the account for|
+  | memo | string | ✔       | The memo to set on the new account|
 
   See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#CreateAccount](https://partner.steamgames.com/doc/webapi/IGameServersService#CreateAccount)
   """
@@ -46,10 +46,10 @@ defmodule SteamEx.IGameServersService do
   @doc """
   This method changes the memo associated with the game server account. Memos do not affect the account in any way. The memo shows up in the GetAccountList response and serves only as a reminder of what the account is used for.
 
-  ## Required params
-    - key: Steamworks Web API user authentication key.
-    - steamid: The SteamID of the game server to set the memo on
-    - memo: The memo to set on the new account
+  | Name   | Type   | Required | Description |
+  | key    | string | ✔       | Steamworks Web API user authentication key.|
+  | steamid| uint64 | ✔       | The SteamID of the game server to set the memo on|
+  | memo   | string | ✔       | The memo to set on the new account|
 
   See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#SetMemo](https://partner.steamgames.com/doc/webapi/IGameServersService#SetMemo)
   """
@@ -60,9 +60,9 @@ defmodule SteamEx.IGameServersService do
   @doc """
   Generates a new login token for the specified game server
 
-  ## Required params
-    - key: Steamworks Web API user authentication key.
-    - steamid: The SteamID of the game server to reset the login token of
+  | Name   | Type   | Required | Description |
+  | key    | string | ✔       | Steamworks Web API user authentication key.|
+  | steamid| uint64 | ✔       | The SteamID of the game server to reset the login token of|
     
   See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#ResetLoginToken](https://partner.steamgames.com/doc/webapi/IGameServersService#ResetLoginToken)
   """
@@ -73,9 +73,9 @@ defmodule SteamEx.IGameServersService do
   @doc """
   Deletes a persistent game server account
 
-  ## Required params
-    - key: Steamworks Web API user authentication key.
-    - steamid: The SteamID of the game server account to delete
+  | Name   | Type   | Required | Description |
+  | key    | string | ✔       | Steamworks Web API user authentication key.|
+  | steamid| uint64 | ✔       | The SteamID of the game server account to delete|
 
   See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#DeleteAccount](https://partner.steamgames.com/doc/webapi/IGameServersService#DeleteAccount)
   """
@@ -86,9 +86,9 @@ defmodule SteamEx.IGameServersService do
   @doc """
   Gets public information about a given game server account
 
-  ## Required params
-    - key: Steamworks Web API user authentication key.
-    - steamid: The SteamID of the game server to get info on
+  | Name   | Type   | Required | Description |
+  | key    | string | ✔       | Steamworks Web API user authentication key.|
+  | steamid| uint64 | ✔       | The SteamID of the game server to get info on|
 
   See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#GetAccountPublicInfo](https://partner.steamgames.com/doc/webapi/IGameServersService#GetAccountPublicInfo)
   """
@@ -99,9 +99,9 @@ defmodule SteamEx.IGameServersService do
   @doc """
   Queries the status of the specified token, which must be owned by you
 
-  ## Required params
-    - key: Steamworks Web API user authentication key.
-    - login_token: Login token to query
+  | Name       | Type   | Required | Description |
+  | key        | string | ✔       | Steamworks Web API user authentication key.|
+  | login_token| string | ✔       | 	Login token to query|
 
   See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#QueryLoginToken](https://partner.steamgames.com/doc/webapi/IGameServersService#QueryLoginToken)
   """
@@ -112,9 +112,9 @@ defmodule SteamEx.IGameServersService do
   @doc """
   Gets a list of server SteamIDs given a list of IPs
 
-  ## Required params
-    - key: Steamworks Web API user authentication key.
-    - server_ips
+  | Name       | Type   | Required | Description |
+  | key        | string | ✔       | Steamworks Web API user authentication key.|
+  | server_ips | string | ✔       | |
 
   See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#GetServerSteamIDsByIP](https://partner.steamgames.com/doc/webapi/IGameServersService#GetServerSteamIDsByIP)
   """
@@ -125,9 +125,9 @@ defmodule SteamEx.IGameServersService do
   @doc """
   Gets a list of server IP addresses given a list of SteamIDs
 
-  ## Required params
-    - key: Steamworks Web API user authentication key.
-    - server_steamids
+  | Name            | Type   | Required | Description |
+  | key             | string | ✔       | Steamworks Web API user authentication key.|
+  | server_steamids | string | ✔       | |
 
   See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#GetServerIPsBySteamID](https://partner.steamgames.com/doc/webapi/IGameServersService#GetServerIPsBySteamID)
   """
