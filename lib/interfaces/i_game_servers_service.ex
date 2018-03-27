@@ -10,7 +10,8 @@ defmodule SteamEx.IGameServersService do
 
   ## Required params
     - key: Steamworks Web API user authentication key.
-  See other: https://partner.steamgames.com/doc/webapi/IGameServersService#GetAccountList
+
+  See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#GetAccountList](https://partner.steamgames.com/doc/webapi/IGameServersService#GetAccountList)
   """
   def get_account_list(access_key, params, headers \\ %{}) do
     get("IGameServersService/GetAccountList/v1",  access_key, params, headers)
@@ -21,7 +22,8 @@ defmodule SteamEx.IGameServersService do
 
   ## Required params
     - key: Steamworks Web API user authentication key.
-  See other: https://developer.valvesoftware.com/wiki/Talk:Master_Server_Query_Protocol
+
+  See other: [https://developer.valvesoftware.com/wiki/Talk:Master_Server_Query_Protocol](https://developer.valvesoftware.com/wiki/Talk:Master_Server_Query_Protocol)
   """
   def get_server_list(access_key, params, headers \\ %{}) do
     get("IGameServersService/GetServerList/v1/",  access_key, params, headers)
@@ -34,7 +36,8 @@ defmodule SteamEx.IGameServersService do
     - key: Steamworks Web API user authentication key.
     - appid: The app to use the account for
     - memo: The memo to set on the new account
-  See other: https://partner.steamgames.com/doc/webapi/IGameServersService#CreateAccount
+
+  See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#CreateAccount](https://partner.steamgames.com/doc/webapi/IGameServersService#CreateAccount)
   """
   def create_account(access_key, params, headers \\ %{}) do
     post("IGameServersService/CreateAccount/v1", access_key, params, headers)
@@ -47,7 +50,8 @@ defmodule SteamEx.IGameServersService do
     - key: Steamworks Web API user authentication key.
     - steamid: The SteamID of the game server to set the memo on
     - memo: The memo to set on the new account
-  See other: https://partner.steamgames.com/doc/webapi/IGameServersService#SetMemo
+
+  See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#SetMemo](https://partner.steamgames.com/doc/webapi/IGameServersService#SetMemo)
   """
   def set_memo(access_key, params, headers \\ %{}) do
     post("IGameServersService/SetMemo/v1", access_key, params, headers)
@@ -59,7 +63,8 @@ defmodule SteamEx.IGameServersService do
   ## Required params
     - key: Steamworks Web API user authentication key.
     - steamid: The SteamID of the game server to reset the login token of
-  See other: https://partner.steamgames.com/doc/webapi/IGameServersService#ResetLoginToken
+    
+  See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#ResetLoginToken](https://partner.steamgames.com/doc/webapi/IGameServersService#ResetLoginToken)
   """
   def reset_login_token(access_key, params, headers \\ %{}) do
     post("IGameServersService/ResetLoginToken/v1", access_key, params, headers)
@@ -71,7 +76,8 @@ defmodule SteamEx.IGameServersService do
   ## Required params
     - key: Steamworks Web API user authentication key.
     - steamid: The SteamID of the game server account to delete
-  See other: https://partner.steamgames.com/doc/webapi/IGameServersService#DeleteAccount
+
+  See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#DeleteAccount](https://partner.steamgames.com/doc/webapi/IGameServersService#DeleteAccount)
   """
   def delete_account(access_key, params, headers \\ %{}) do
     post("IGameServersService/DeleteAccount/v1", access_key, params, headers)
@@ -83,7 +89,8 @@ defmodule SteamEx.IGameServersService do
   ## Required params
     - key: Steamworks Web API user authentication key.
     - steamid: The SteamID of the game server to get info on
-  See other: https://partner.steamgames.com/doc/webapi/IGameServersService#GetAccountPublicInfo
+
+  See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#GetAccountPublicInfo](https://partner.steamgames.com/doc/webapi/IGameServersService#GetAccountPublicInfo)
   """
   def get_account_public_info(access_key, params, headers \\ %{}) do
     get("IGameServersService/GetAccountPublicInfo/v1", access_key, params, headers)
@@ -95,7 +102,8 @@ defmodule SteamEx.IGameServersService do
   ## Required params
     - key: Steamworks Web API user authentication key.
     - login_token: Login token to query
-  See other: https://partner.steamgames.com/doc/webapi/IGameServersService#QueryLoginToken
+
+  See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#QueryLoginToken](https://partner.steamgames.com/doc/webapi/IGameServersService#QueryLoginToken)
   """
   def query_login_token(access_key, params, headers \\ %{}) do
     get("IGameServersService/QueryLoginToken/v1", access_key, params, headers)
@@ -107,7 +115,8 @@ defmodule SteamEx.IGameServersService do
   ## Required params
     - key: Steamworks Web API user authentication key.
     - server_ips
-  See other: https://partner.steamgames.com/doc/webapi/IGameServersService#GetServerSteamIDsByIP
+
+  See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#GetServerSteamIDsByIP](https://partner.steamgames.com/doc/webapi/IGameServersService#GetServerSteamIDsByIP)
   """
   def get_server_steam_ids_by_ip(access_key, params, headers \\ %{}) do
     get("IGameServersService/GetServerSteamIDsByIP/v1", access_key, params, headers)
@@ -119,7 +128,8 @@ defmodule SteamEx.IGameServersService do
   ## Required params
     - key: Steamworks Web API user authentication key.
     - server_steamids
-  See other: https://partner.steamgames.com/doc/webapi/IGameServersService#GetServerIPsBySteamID
+
+  See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#GetServerIPsBySteamID](https://partner.steamgames.com/doc/webapi/IGameServersService#GetServerIPsBySteamID)
   """
   def get_server_ips_by_steam_id(access_key, params, headers \\ %{}) do
     get("IGameServersService/GetServerIPsBySteamID/v1", access_key, params, headers)

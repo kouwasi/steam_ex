@@ -25,7 +25,7 @@ defmodule SteamEx.ICheatReportingService do
     - cheat_param_1: Extra cheat data.
     - cheat_param_2: Extra cheat data.
 
-  See other: https://partner.steamgames.com/doc/webapi/ICheatReportingService#ReportCheatData
+  See other: [https://partner.steamgames.com/doc/webapi/ICheatReportingService#ReportCheatData](https://partner.steamgames.com/doc/webapi/ICheatReportingService#ReportCheatData)
   """
   def report_cheat_data(access_key, params, headers \\ %{}) do
     post("ICheatReportingService/ReportCheatData/v1/",  access_key, params, headers)
