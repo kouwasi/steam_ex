@@ -1,9 +1,14 @@
 defmodule SteamEx.IGameServersService do
   @moduledoc """
-  Provides IGameServersService API interfaces.
+  Methods to improve the administration of Steam Game Servers.
+
+  **NOTE**: This is a Service interface, methods in this interface should be called with the `input_json` parameter.
+
+  For more info on how to use the Steamworks Web API please see the [Web API Overview](https://partner.steamgames.com/doc/webapi_overview).
   """
 
   import SteamEx.API.Base
+  @interface "IGameServersService"
 
   @doc """
   Gets a list of game server accounts with their logon tokens
@@ -14,7 +19,7 @@ defmodule SteamEx.IGameServersService do
   See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#GetAccountList](https://partner.steamgames.com/doc/webapi/IGameServersService#GetAccountList)
   """
   def get_account_list(access_key, params, headers \\ %{}) do
-    get("IGameServersService/GetAccountList/v1",  access_key, params, headers)
+    get(@interface <> "/GetAccountList/v1",  access_key, params, headers)
   end
 
   @doc """
@@ -25,8 +30,8 @@ defmodule SteamEx.IGameServersService do
 
   See other: [https://developer.valvesoftware.com/wiki/Talk:Master_Server_Query_Protocol](https://developer.valvesoftware.com/wiki/Talk:Master_Server_Query_Protocol)
   """
-  def get_server_list(access_key, params, headers \\ %{}) do
-    get("IGameServersService/GetServerList/v1/",  access_key, params, headers)
+  def get_server_list(access_key, params \\ %{}, headers \\ %{}) do
+    get(@interface <> "/GetServerList/v1/",  access_key, params, headers)
   end
 
   @doc """
@@ -39,8 +44,8 @@ defmodule SteamEx.IGameServersService do
 
   See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#CreateAccount](https://partner.steamgames.com/doc/webapi/IGameServersService#CreateAccount)
   """
-  def create_account(access_key, params, headers \\ %{}) do
-    post("IGameServersService/CreateAccount/v1", access_key, params, headers)
+  def create_account(access_key, params \\ %{}, headers \\ %{}) do
+    post(@interface <> "/CreateAccount/v1", access_key, params, headers)
   end
 
   @doc """
@@ -53,8 +58,8 @@ defmodule SteamEx.IGameServersService do
 
   See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#SetMemo](https://partner.steamgames.com/doc/webapi/IGameServersService#SetMemo)
   """
-  def set_memo(access_key, params, headers \\ %{}) do
-    post("IGameServersService/SetMemo/v1", access_key, params, headers)
+  def set_memo(access_key, params \\ %{}, headers \\ %{}) do
+    post(@interface <> "/SetMemo/v1", access_key, params, headers)
   end
 
   @doc """
@@ -66,8 +71,8 @@ defmodule SteamEx.IGameServersService do
     
   See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#ResetLoginToken](https://partner.steamgames.com/doc/webapi/IGameServersService#ResetLoginToken)
   """
-  def reset_login_token(access_key, params, headers \\ %{}) do
-    post("IGameServersService/ResetLoginToken/v1", access_key, params, headers)
+  def reset_login_token(access_key \\ %{}, params, headers \\ %{}) do
+    post(@interface <> "/ResetLoginToken/v1", access_key, params, headers)
   end
 
   @doc """
@@ -79,8 +84,8 @@ defmodule SteamEx.IGameServersService do
 
   See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#DeleteAccount](https://partner.steamgames.com/doc/webapi/IGameServersService#DeleteAccount)
   """
-  def delete_account(access_key, params, headers \\ %{}) do
-    post("IGameServersService/DeleteAccount/v1", access_key, params, headers)
+  def delete_account(access_key, params \\ %{}, headers \\ %{}) do
+    post(@interface <> "/DeleteAccount/v1", access_key, params, headers)
   end
 
   @doc """
@@ -92,8 +97,8 @@ defmodule SteamEx.IGameServersService do
 
   See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#GetAccountPublicInfo](https://partner.steamgames.com/doc/webapi/IGameServersService#GetAccountPublicInfo)
   """
-  def get_account_public_info(access_key, params, headers \\ %{}) do
-    get("IGameServersService/GetAccountPublicInfo/v1", access_key, params, headers)
+  def get_account_public_info(access_key, params \\ %{}, headers \\ %{}) do
+    get(@interface <> "/GetAccountPublicInfo/v1", access_key, params, headers)
   end
 
   @doc """
@@ -105,8 +110,8 @@ defmodule SteamEx.IGameServersService do
 
   See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#QueryLoginToken](https://partner.steamgames.com/doc/webapi/IGameServersService#QueryLoginToken)
   """
-  def query_login_token(access_key, params, headers \\ %{}) do
-    get("IGameServersService/QueryLoginToken/v1", access_key, params, headers)
+  def query_login_token(access_key, params \\ %{}, headers \\ %{}) do
+    get(@interface <> "/QueryLoginToken/v1", access_key, params, headers)
   end
 
   @doc """
@@ -118,8 +123,8 @@ defmodule SteamEx.IGameServersService do
 
   See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#GetServerSteamIDsByIP](https://partner.steamgames.com/doc/webapi/IGameServersService#GetServerSteamIDsByIP)
   """
-  def get_server_steam_ids_by_ip(access_key, params, headers \\ %{}) do
-    get("IGameServersService/GetServerSteamIDsByIP/v1", access_key, params, headers)
+  def get_server_steam_ids_by_ip(access_key, params \\ %{}, headers \\ %{}) do
+    get(@interface <> "/GetServerSteamIDsByIP/v1", access_key, params, headers)
   end
 
   @doc """
@@ -131,7 +136,7 @@ defmodule SteamEx.IGameServersService do
 
   See other: [https://partner.steamgames.com/doc/webapi/IGameServersService#GetServerIPsBySteamID](https://partner.steamgames.com/doc/webapi/IGameServersService#GetServerIPsBySteamID)
   """
-  def get_server_ips_by_steam_id(access_key, params, headers \\ %{}) do
-    get("IGameServersService/GetServerIPsBySteamID/v1", access_key, params, headers)
+  def get_server_ips_by_steam_id(access_key, params \\ %{}, headers \\ %{}) do
+    get(@interface <> "/GetServerIPsBySteamID/v1", access_key, params, headers)
   end
 end

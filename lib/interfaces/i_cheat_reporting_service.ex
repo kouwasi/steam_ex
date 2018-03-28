@@ -1,9 +1,16 @@
 defmodule SteamEx.ICheatReportingService do
   @moduledoc """
-  Provides ICheatReportingService API interfaces.
+  This service allows your game to report cheats and cheaters to the [VAC](https://partner.steamgames.com/doc/features/anticheat#VAC) system and provides the toolset behind the [Game Bans](https://partner.steamgames.com/doc/features/anticheat#GameBans) system.
+
+  To use this interface you must first opt in to VAC support. This can be done from the [Anti-Cheat Configuration](https://partner.steamgames.com/apps/vac/) page in the App Admin panel.
+
+  **NOTE**: This is a Service interface, methods in this interface should be called with the `input_json` parameter.
+
+  For more info on how to use the Steamworks Web API please see the [Web API Overview](https://partner.steamgames.com/doc/webapi_overview).
   """
 
   import SteamEx.API.Base
+  @interface "ICheatReportingService"
 
   @doc """
   Reports cheat data. Only use on test account that is running the game but not in a multiplayer session.
@@ -27,7 +34,7 @@ defmodule SteamEx.ICheatReportingService do
 
   See other: [https://partner.steamgames.com/doc/webapi/ICheatReportingService#ReportCheatData](https://partner.steamgames.com/doc/webapi/ICheatReportingService#ReportCheatData)
   """
-  def report_cheat_data(access_key, params, headers \\ %{}) do
-    post("ICheatReportingService/ReportCheatData/v1/",  access_key, params, headers)
+  def report_cheat_data(access_key, params \\ %{}, headers \\ %{}) do
+    post(@interface <> "/ReportCheatData/v1/",  access_key, params, headers)
   end
 end
