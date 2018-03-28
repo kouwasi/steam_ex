@@ -22,9 +22,8 @@ defmodule SteamEx.Mixfile do
   defp deps do
     [
       {:httpoison, "~> 1.0"},
-      {:poison, "~> 1.5"},
-      {:ex_doc, "~> 0.18.3", only: :dev},
-      {:earmark, "~> 1.2", only: :dev}
+      {:ex_doc, "~> 0.18.3", only: :dev, runtime: false},
+      {:earmark, "~> 1.2", only: :dev, runtime: false}
     ]
   end
 end
