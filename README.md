@@ -4,13 +4,13 @@
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
+If [available in Hex](https://hex.pm/packages/steam_ex), the package can be installed
 by adding `steam_ex` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:steam_ex, "~> 0.1.0"}
+    {:steam_ex, "~> 0.2.0-alpha"}
   ]
 end
 ```
