@@ -1,6 +1,6 @@
 # SteamEx
 
-**TODO: Add description**
+Inspired by [QiitaEx](https://hex.pm/packages/qiita_ex)
 
 ## Installation
 
